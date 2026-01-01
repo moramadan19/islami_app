@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/utiles/islamiColors.dart';
 
 class AppStyles {
+  static const TextStyle bold36white = TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      fontSize: 36
+  );
+
   static const TextStyle bold14white = TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.bold,

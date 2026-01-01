@@ -71,6 +71,13 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       );
 
   }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    //todo: read last sura index from shared prefs
+
+  }
 
   void loadSuraFile(int index)async{
     String fileContent = await rootBundle.loadString('assets/Suras/${index+1}.txt');

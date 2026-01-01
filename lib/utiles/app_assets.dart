@@ -35,6 +35,12 @@ class AppAssets {
   static const String  bottom2 = 'assets/images/Mosque-02 2.png';
 
 
+  static const String  Mask_Sebha = 'assets/sebha/Mask group-1.png';
+  static const String  circle = 'assets/sebha/SebhaBody 1.png';
+  static const String  group = 'assets/sebha/Group 39.png';
+
+
+
 
 
 

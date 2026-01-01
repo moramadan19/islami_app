@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/home/tabs/quran/details/widget/sura_content.dart';
 import 'package:islami_app/home/tabs/quran/details/widget/sura_content1.dart';
+import 'package:islami_app/providers/most_recent_provider.dart';
 import 'package:islami_app/utiles/app_routes.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../model/quran_resources.dart';
 import '../../../../utiles/app_assets.dart';
@@ -18,6 +20,7 @@ class SuraDetailsScreen1 extends StatefulWidget {
 
 class _SuraDetailsScreen1State extends State<SuraDetailsScreen1> {
   String suraContent = '';
+  late MostRecentProvider mostRecentProvider ;
 
 
   @override
@@ -25,6 +28,7 @@ class _SuraDetailsScreen1State extends State<SuraDetailsScreen1> {
     var height  = MediaQuery.of(context).size.height;
     var width  = MediaQuery.of(context).size.width;
     int index = ModalRoute.of(context)?.settings.arguments as int;
+    mostRecentProvider = Provider.of<MostRecentProvider>(context);
     if(suraContent.isEmpty){
       loadSuraFile(index);
     }
@@ -65,6 +69,14 @@ class _SuraDetailsScreen1State extends State<SuraDetailsScreen1> {
         ],),
       ),
     );
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    //todo: read last sura index from shared prefs
+    mostRecentProvider.getLastSuraIndex();
+
   }
 
   void loadSuraFile(int index)async{
